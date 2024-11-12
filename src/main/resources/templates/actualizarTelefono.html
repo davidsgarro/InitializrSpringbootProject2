@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualizar Teléfono</title>
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #2D7D66;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            width: 320px;
+            color: white;
+            text-align: center;
+        }
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 5px;
+            text-align: left;
+            color: #fff;
+            margin-top: 10px;
+        }
+        input[type="text"], select {
+            width: calc(100% - 20px); /* Ajuste para el padding y centrado */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            font-size: 14px;
+            background-color: #ffffff;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+        .btn {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background-color: #218838;
+        }
+        .return-button {
+            background-color: #fff;
+            color: #2D7D66;
+            border: 2px solid #2D7D66;
+            margin-top: 10px;
+        }
+        .return-button:hover {
+            background-color: #2D7D66;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Cambiar Teléfono</h2>
+        <form action="/actualizarTelefono" method="post">
+            <label for="tipoCliente">Tipo de Cliente:</label>
+            <select id="tipoCliente" name="tipoCliente" required>
+                <option value="fisico">Físico</option>
+                <option value="juridico">Jurídico</option>
+            </select>
+
+            <label for="identidadCliente">Identidad del Cliente:</label>
+            <input type="text" id="identidadCliente" name="identidadCliente" required>
+
+            <label for="nuevoTelefono">Nuevo Número de Teléfono:</label>
+            <input type="text" id="nuevoTelefono" name="nuevoTelefono" required>
+
+            <button type="submit" class="btn">Actualizar Teléfono</button>
+        </form>
+        <button class="btn return-button" onclick="location.href='/gestionClientes'">Volver</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultado de Transferencia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #fdebed, #fcc2cb);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            animation: backgroundFade 3s infinite alternate;
+        }
+
+        @keyframes backgroundFade {
+            0% { background: linear-gradient(135deg, #fdebed, #fcc2cb); }
+            100% { background: linear-gradient(135deg, #fcc2cb, #fdebed); }
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            padding: 20px;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ff6473, #ff1940);
+            color: white;
+            padding: 10px;
+            border-radius: 8px 8px 0 0;
+            font-size: 24px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .content {
+            padding: 15px;
+            text-align: left;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #ff1940;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #ff6473, #ff1940);
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            background-color: #ff324d;
+        }
+
+        .btn:active {
+            transform: translateY(1px);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Resultado de Transferencia</div>
+        <div class="content">
+            <p>Estimado usuario: <span class="highlight" th:text="${nombrePropietario}">Nombre del Usuario</span>, la transferencia de fondos se ejecutó satisfactoriamente.</p>
+            <p>El monto transferido de la cuenta <span class="highlight" th:text="${cuentaOrigen}">CTAX</span> a la cuenta <span class="highlight" th:text="${cuentaDestino}">CTAY</span> es de <span class="highlight" th:text="${montoTransferido}">XXX.XX</span> colones.</p>
+        </div>
+        <a href="/gestionTransacciones" class="btn">Volver a Gestión de Transacciones</a>
+    </div>
+</body>
+</html>

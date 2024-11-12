@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultado de Consulta de Cuentas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: center;
+            width: 500px;
+        }
+        .header {
+            background-color: #023ea6; /* Color azul oscuro */
+            color: white;
+            padding: 15px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            text-align: left;
+        }
+        th {
+            background-color: #023ea6; /* Color azul oscuro */
+            color: white;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .btn {
+            background-color: #023ea6; /* Color azul oscuro */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn:hover {
+            background-color: #1d5cb8; /* Azul más claro al hacer hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Resultado de Consulta de Cuentas</div>
+        <p>Identificación del Cliente: <strong th:text="${identidadCliente}"></strong></p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Número de Cuenta</th>
+                    <th>Estatus</th>
+                    <th>Saldo Actual</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="cuenta : ${cuentas}">
+                    <td th:text="${cuenta.numeroCuenta}">Número de Cuenta</td>
+                    <td th:text="${cuenta.estadoCuenta}">Estatus</td>
+                    <td th:text="${cuenta.montoInicial}">Saldo</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="button-container">
+            <a href="/consultarCuentas" class="btn">Nueva Consulta</a>
+            <a href="/gestionCuentas" class="btn">Volver a Gestión de Cuentas</a>
+        </div>
+    </div>
+</body>
+</html>

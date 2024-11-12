@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Cuenta</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            padding: 20px;
+            text-align: center;
+        }
+        .header {
+            background-color: #a60202;
+            color: white;
+            padding: 10px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .content {
+            padding: 15px;
+            text-align: left;
+        }
+        .content label {
+            font-size: 14px;
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+        .content input[type="text"],
+        .content input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .btn {
+            background-color: #a60202;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background-color: #d90404;
+        }
+        .back-link {
+            display: block;
+            margin-top: 10px;
+            font-size: 14px;
+            text-decoration: none;
+            color: #a60202;
+            text-align: center;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function confirmarEliminacion(event) {
+            event.preventDefault(); // Evita el envío automático del formulario
+            const numeroCuenta = document.getElementById("numeroCuenta").value;
+            const pinCuenta = document.getElementById("pinCuenta").value;
+
+            // Realizar la solicitud AJAX para obtener los datos de la cuenta
+            fetch(`/obtenerDatosCuenta?numeroCuenta=${numeroCuenta}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        alert("Cuenta no encontrada.");
+                    } else {
+                        const nombreCliente = data.nombreCliente;
+                        const saldoActual = data.saldoActual;
+
+                        const mensajeConfirmacion = `Estimado usuario: ${nombreCliente}, usted está a un paso de eliminar su cuenta ${numeroCuenta} cuyo saldo actual es de ${saldoActual}.\n\n¿Está seguro de que desea eliminar esta cuenta?`;
+
+                        if (confirm(mensajeConfirmacion)) {
+                            // Si el usuario confirma, envía el formulario
+                            document.getElementById("eliminarCuentaForm").submit();
+                        }
+                    }
+                })
+                .catch(error => {
+                    console.error("Error al obtener datos de la cuenta:", error);
+                    alert("Hubo un error al verificar la cuenta.");
+                });
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Eliminar Cuenta</div>
+        <div class="content">
+            <form id="eliminarCuentaForm" action="/eliminarCuenta" method="post" onsubmit="confirmarEliminacion(event)">
+                <label for="numeroCuenta">Número de Cuenta:</label>
+                <input type="text" id="numeroCuenta" name="numeroCuenta" required>
+
+                <label for="pinCuenta">PIN de la Cuenta:</label>
+                <input type="password" id="pinCuenta" name="pinCuenta" required>
+
+                <button type="submit" class="btn">Eliminar Cuenta</button>
+            </form>
+            <a href="/gestionCuentas" class="back-link">Volver a gestión de cuentas</a>
+        </div>
+    </div>
+</body>
+</html>
+

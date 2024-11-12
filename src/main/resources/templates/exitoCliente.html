@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Cliente Creado</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: left;
+        }
+        .header {
+            background-color: #247024; /* Color verde */
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 24px;
+            border-radius: 8px 8px 0 0;
+        }
+        .info {
+            margin: 15px 0;
+        }
+        a, .btn {
+            color: #247024;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .btn:hover, a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Cliente Creado</div>
+        <div class="info"><strong>Código del Cliente:</strong> <span th:text="${codigoCliente}"></span></div>
+        <div class="info"><strong>Nombre Completo:</strong> <span th:text="${nombre}"></span></div>
+        <div class="info"><strong>Número de Teléfono:</strong> <span th:text="${telefono}"></span></div>
+        <div class="info"><strong>Dirección de Correo Electrónico:</strong> <span th:text="${correo}"></span></div>
+        <div class="info"><strong>Identificación:</strong> <span th:text="${identificacion}"></span></div>
+        <div class="info"><strong>Cantidad Máxima de Cuentas:</strong> <span th:text="${maxCuentas}"></span></div>
+        <div class="info"><strong>Fecha de Nacimiento:</strong> <span th:text="${fechaNacimiento}"></span></div>
+        <div class="info">
+            
+            <button type="button" class="btn" onclick="location.href='/gestionClientes'">Volver</button>
+        </div>
+    </div>
+</body>
+</html>
+
+
+

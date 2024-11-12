@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Consultar Cuentas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: center;
+            width: 400px;
+        }
+        .header {
+            background-color: #d9534f; /* Rojo claro */
+            color: white;
+            padding: 15px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .form-group {
+            margin-top: 20px;
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .btn {
+            background-color: #d9534f; /* Rojo claro */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-top: 20px;
+            width: 100%;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn:hover {
+            background-color: #c9302c; /* Rojo más oscuro al hacer hover */
+        }
+        .back-link {
+            color: #d9534f; /* Rojo claro */
+            text-decoration: none;
+            font-size: 14px;
+            display: inline-block;
+            margin-top: 15px;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Consultar Cuentas</div>
+        <form action="/consultarCuentas" method="post">
+            <div class="form-group">
+                <label for="identidadCliente">Identificación del Cliente:</label>
+                <input type="text" id="identidadCliente" name="identidadCliente" required pattern="\d+">
+            </div>
+            <button type="submit" class="btn">Consultar</button>
+        </form>
+        <a href="/gestionCuentas" class="back-link">Volver a Gestión de Cuentas</a>
+    </div>
+</body>
+</html>

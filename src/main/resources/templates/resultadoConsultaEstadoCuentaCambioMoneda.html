@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Estado de Cuenta en Dólares</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #26c9b1, #d4fff2); /* Fondo en gradiente verde agua */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            width: 450px;
+            padding: 20px;
+            text-align: center;
+        }
+        .header {
+            background: linear-gradient(135deg, #26c9b1, #1da293); /* Gradiente para el encabezado */
+            color: white;
+            padding: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 8px 8px 0 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .info-section {
+            padding: 10px 0;
+            text-align: left;
+        }
+        .info-item {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .highlight {
+            color: #26c9b1;
+            font-weight: bold;
+        }
+        .transacciones-header {
+            background-color: #26c9b1;
+            color: white;
+            padding: 8px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        .transacciones-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        .transacciones-table th, .transacciones-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+            font-size: 14px;
+        }
+        .transacciones-table th {
+            background-color: #26c9b1;
+            color: white;
+        }
+        .btn {
+            background: linear-gradient(135deg, #26c9b1, #1da293);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 15px;
+            width: 100%;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+        .btn:active {
+            transform: translateY(1px);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Estado de Cuenta en Dólares</div>
+        <div class="info-section">
+            <p class="info-item"><strong>Número de cuenta:</strong> <span th:text="${numeroCuenta}">CTA#</span></p>
+            <p class="info-item"><strong>Propietario:</strong> <span th:text="${nombrePropietario}">Nombre del Propietario</span></p>
+            <p class="info-item"><strong>Saldo actual en colones:</strong> <span th:text="${saldo}">0.00</span> colones</p>
+            <p class="info-item"><strong>Saldo actual en dólares:</strong> <span class="highlight" th:text="${saldoDolares}">0.00</span> dólares</p>
+            <p class="info-item"><em>(Tipo de cambio compra: <span class="highlight" th:text="${tipoCambio}">0.00</span> colones)</em></p>
+            <p class="info-item"><strong>Estatus:</strong> <span th:text="${estatus}">Activa</span></p>
+        </div>
+        <div class="transacciones-header">--- Transacciones en Dólares ---</div>
+        <table class="transacciones-table">
+            <thead>
+                <tr>
+                    <th>Tipo</th>
+                    <th>Monto en Colones</th>
+                    <th>Monto en Dólares</th>
+                    <th>Fecha</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="transaccion : ${transacciones}">
+                    <td th:text="${transaccion.tipo}">---</td>
+                    <td th:text="${transaccion.monto}">0.00</td>
+                    <td th:text="${transaccion.montoDolares}">0.00</td>
+                    <td th:text="${transaccion.fecha}">---</td>
+                </tr>
+            </tbody>
+        </table>
+        <button onclick="location.href='/consultarEstadoCuentaCambioMoneda'" class="btn">Nueva Consulta</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema Bancario</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #bfdb42, #f8a13d); /* Fondo en gradiente naranja a verde */
+            color: #333; /* Color de texto principal */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #ec8511; /* Fondo anaranjado del encabezado */
+            color: white; /* Letras blancas */
+            padding: 20px 0;
+            font-size: 32px;
+            text-align: center;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-bottom: 5px solid #e67300;
+        }
+        p {
+            font-size: 18px;
+            color: #ffffff; /* Texto en color anaranjado suave */
+            margin-top: 20px;
+        }
+        .menu {
+            display: grid;
+            grid-template-columns: repeat(2, 200px);
+            gap: 20px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        .menu button {
+            background-color: #ffa64d; /* Fondo anaranjado claro de los botones */
+            color: #ffffff; /* Color del texto */
+            font-size: 18px;
+            border: none;
+            padding: 15px 30px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .menu button:hover {
+            transform: translateY(-3px); /* Efecto de elevación al pasar el ratón */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más profunda */
+            background-color: #ec8511; /* Color anaranjado más oscuro al hacer hover */
+        }
+        .menu button:active {
+            transform: translateY(1px);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15); /* Sombra más ligera */
+        }
+    </style>
+</head>
+<body>
+    <header>Sistema Bancario</header>
+    <p>Seleccione una opción para continuar</p>
+    <div class="menu">
+        <button onclick="location.href='/gestionClientes'">Gestión de Clientes</button>
+        <button onclick="location.href='/gestionCuentas'">Gestión de Cuentas</button>
+        <button onclick="location.href='/gestionTransacciones'">Gestión de Transacciones</button>
+        <button onclick="location.href='/consultas'">Consultas</button>
+    </div>
+</body>
+</html>

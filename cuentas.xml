@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><cuentas>
+    <cuenta>
+        <estadoCuenta>Activa</estadoCuenta>
+        <identidadCliente>305610019</identidadCliente>
+        <montoInicial>17259.739999999998</montoInicial>
+        <numeroCuenta>CTA1</numeroCuenta>
+        <pinCuenta>S12345</pinCuenta>
+    <transaccion fecha="2024-11-11 13:25:07" monto="1000.0" tipo="deposito"/><transaccion fecha="2024-11-11 13:29:47" monto="2000.0" tipo="retiro"/><transaccion fecha="2024-11-11 13:30:54" monto="1032.8" tipo="retiro"/><transaccion fecha="2024-11-11 19:08:58" monto="10.0" tipo="retiro"/><transaccion fecha="2024-11-11 20:17:24" monto="516.4" tipo="retiro"/><transaccion fecha="2024-11-11 20:58:53" monto="2000.0" tipo="deposito"/></cuenta>
+    <cuenta>
+        <estadoCuenta>Activa</estadoCuenta>
+        <identidadCliente>305610019</identidadCliente>
+        <montoInicial>70000.0</montoInicial>
+        <numeroCuenta>CTA2</numeroCuenta>
+        <pinCuenta>J12345</pinCuenta>
+    <transaccion fecha="2024-11-11 13:29:47" monto="2000.0" tipo="deposito"/><transaccion fecha="2024-11-11 20:58:53" monto="2000.0" tipo="retiro"/></cuenta>
+</cuentas>

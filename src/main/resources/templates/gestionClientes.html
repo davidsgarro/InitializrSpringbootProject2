@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Clientes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0ffff; /* Fondo cian claro */
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #00bfff; /* Fondo cian */
+            color: white;
+            padding: 20px;
+            font-size: 28px;
+        }
+        p {
+            font-size: 16px;
+            color: #333;
+            margin-top: 10px;
+        }
+        .menu {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 40px;
+        }
+        .menu button {
+            background-color: #afeeee; /* Botones cian claro */
+            color: black;
+            font-size: 18px;
+            border: none;
+            padding: 15px 30px;
+            cursor: pointer;
+            border-radius: 8px;
+            width: 300px;
+            transition: background-color 0.3s;
+        }
+        .menu button:hover {
+            background-color: #87cefa; /* Cambio de color al pasar el ratón */
+        }
+    </style>
+</head>
+<body>
+    <header>Gestión de Clientes</header>
+    <p>Seleccione una opción para gestionar los clientes</p>
+    <div class="menu">
+        <button onclick="location.href='/listarClientes'">Listar Clientes</button>
+        <button onclick="location.href='/crearClienteFisico'">Crear Cliente Físico</button>
+        <button onclick="location.href='/crearClienteJuridico'">Crear Cliente Juridíco</button>
+        <button onclick="location.href='/actualizarTelefono'">Cambiar Teléfono del Cliente</button>
+        <button onclick="location.href='/actualizarCorreo'">Cambiar Correo Electrónico del Cliente</button>
+        <button onclick="location.href='/dashboard'">Volver al Inicio</button>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Cuentas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffe4e1; /* Fondo salmón claro */
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #fa8072; /* Fondo salmón */
+            color: white;
+            padding: 20px;
+            font-size: 28px;
+        }
+        p {
+            font-size: 16px;
+            color: #333;
+            margin-top: 10px;
+        }
+        .menu {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 40px;
+        }
+        .menu button {
+            background-color: #ffa07a; /* Botones salmón */
+            color: black;
+            font-size: 18px;
+            border: none;
+            padding: 15px 30px;
+            cursor: pointer;
+            border-radius: 8px;
+            width: 300px;
+            transition: background-color 0.3s;
+        }
+        .menu button:hover {
+            background-color: #ff8c69; /* Cambio de color al pasar el ratón */
+        }
+    </style>
+</head>
+<body>
+    <header>Gestión de Cuentas</header>
+    <p>Seleccione una opción para gestionar las cuentas</p>
+    <div class="menu">
+        <button onclick="location.href='/crearCuenta'">Crear Cuenta</button>
+        <button onclick="location.href='/cambiarPin'">Cambiar PIN</button>
+        <button onclick="location.href='/eliminarCuenta'">Eliminar Cuenta</button>
+        <button onclick="location.href='/inactivarCuenta'">Inactivar Cuenta</button>
+        <button onclick="location.href='/activarCuenta'">Activar Cuenta</button>
+        <button onclick="location.href='/listarCuentas'">Listar Cuentas Registradas</button>
+        <button onclick="location.href='/consultarCuentas'">Listar Cuentas de un Cliente</button>
+        <button onclick="location.href='/dashboard'">Volver al Inicio</button> <!-- Botón para volver al inicio -->
+    </div>
+</body>
+</html>

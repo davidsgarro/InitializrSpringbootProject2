@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Consultar Estado de Cuenta</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #26c9b1, #d4fff2); /* Fondo en gradiente verde agua */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            padding: 20px;
+            text-align: center;
+        }
+        .header {
+            background: linear-gradient(135deg, #26c9b1, #1da293); /* Gradiente para el encabezado */
+            color: white;
+            padding: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 8px 8px 0 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin: 15px 0;
+        }
+        .form-group label {
+            font-size: 16px;
+            display: block;
+            margin-bottom: 5px;
+            text-align: left;
+            color: #333;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus {
+            border-color: #26c9b1;
+            outline: none;
+        }
+        .btn {
+            background: linear-gradient(135deg, #26c9b1, #1da293); /* Gradiente en el botón */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            width: 100%;
+            margin-top: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            background-color: #1da293;
+        }
+        .btn:active {
+            transform: translateY(1px);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+        }
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        .back-link {
+            display: block;
+            margin-top: 15px;
+            font-size: 14px;
+            text-decoration: none;
+            color: #26c9b1;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+            color: #1da293;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Consultar Estado de Cuenta Con Cambio de Moneda</div>
+        <form action="/consultarEstadoCuentaCambioMoneda" method="post">
+            <div class="form-group">
+                <label for="numeroCuenta">Número de Cuenta:</label>
+                <input type="text" id="numeroCuenta" name="numeroCuenta" required>
+            </div>
+            <div class="form-group">
+                <label for="pinCuenta">PIN de la Cuenta:</label>
+                <input type="password" id="pinCuenta" name="pinCuenta" required>
+            </div>
+            <button type="submit" class="btn">Consultar Estado de Cuenta</button>
+            <div class="error-message" th:if="${mensajeError}" th:text="${mensajeError}"></div>
+        </form>
+        <a href="/consultas" class="back-link">Volver a Consultas</a>
+    </div>
+</body>
+</html>

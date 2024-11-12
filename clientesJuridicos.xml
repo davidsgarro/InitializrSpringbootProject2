@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<clientesJuridicos>
+    <clienteJuridico>
+        <categoria>Juridico</categoria>
+        <codigoCliente>Cliente1</codigoCliente>
+        <correo>jennyisabelhuangkuo@gmail.com</correo>
+        <nombre>Juan</nombre>
+        <telefono>87654321</telefono>
+        <cedulaJuridica>3020129121</cedulaJuridica>
+        <razonSocial>Consultores Financieros S.A.</razonSocial>
+        <tipoNegocio>Consultoría Financiera</tipoNegocio>
+    </clienteJuridico>
+</clientesJuridicos>

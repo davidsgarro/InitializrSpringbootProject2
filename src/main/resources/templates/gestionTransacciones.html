@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Transacciones</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3e5f5; /* Fondo lavanda claro */
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #7b68ee; /* Fondo lila */
+            color: white;
+            padding: 20px;
+            font-size: 28px;
+        }
+        p {
+            font-size: 16px;
+            color: #333;
+            margin-top: 10px;
+        }
+        .menu {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 40px;
+        }
+        .menu button {
+            background-color: #d1c4e9; /* Botones lavanda */
+            color: black;
+            font-size: 18px;
+            border: none;
+            padding: 15px 30px;
+            cursor: pointer;
+            border-radius: 8px;
+            width: 300px;
+            transition: background-color 0.3s;
+        }
+        .menu button:hover {
+            background-color: #b39ddb; /* Cambio de color al pasar el ratón */
+        }
+    </style>
+</head>
+<body>
+    <header>Gestión de Transacciones</header>
+    <p>Seleccione una opción para realizar transacciones</p>
+    <div class="menu">
+        <button onclick="location.href='/realizarDeposito'">Depósito en colones</button>
+        <button onclick="location.href='/realizarDepositoCambioMoneda'">Depósito con Cambio de Moneda</button>
+        <button onclick="location.href='/realizarRetiro'">Retiro en colones</button>
+        <button onclick="location.href='/realizarRetiroCambioMoneda'">Retiro con Cambio de Moneda</button>
+        <button onclick="location.href='/realizarTransferencia'">Transferir a un mismo dueño</button>
+        <button onclick="location.href='/dashboard'">Volver al Inicio</button> <!-- Botón para volver al inicio -->
+    </div>
+</body>
+</html>
+

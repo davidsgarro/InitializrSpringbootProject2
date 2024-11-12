@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cliente Jurídico Creado</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: left;
+        }
+        h1 {
+            background-color: #247024;
+            color: white;
+            padding: 15px;
+            border-radius: 8px 8px 0 0;
+            margin: -20px -20px 20px -20px;
+            font-size: 24px;
+            text-align: center;
+        }
+        .info {
+            margin-bottom: 10px;
+        }
+        .info strong {
+            font-weight: bold;
+        }
+        .btn {
+            background-color: #247024;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 4px;
+            width: auto; /* Cambia el ancho para que no ocupe todo el contenedor */
+            margin: 20px auto 0; /* Centra el botón horizontalmente */
+            display: block; /* Necesario para centrar */
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn:hover {
+            background-color: #1e5d1f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cliente Jurídico Creado</h1>
+        <div class="info"><strong>Código del Cliente:</strong> <span th:text="${codigoCliente}"></span></div>
+        <div class="info"><strong>Nombre Completo del Apoderado:</strong> <span th:text="${nombreApoderado}"></span></div>
+        <div class="info"><strong>Número de Teléfono:</strong> <span th:text="${telefono}"></span></div>
+        <div class="info"><strong>Dirección de Correo Electrónico:</strong> <span th:text="${correo}"></span></div>
+        <div class="info"><strong>Tipo de Negocio:</strong> <span th:text="${tipoNegocio}"></span></div>
+        <div class="info"><strong>Cédula Jurídica:</strong> <span th:text="${cedulaJuridica}"></span></div>
+        <div class="info"><strong>Razón Social:</strong> <span th:text="${razonSocial}"></span></div>
+        <a href="/gestionClientes" class="btn">Volver</a>
+    </div>
+</body>
+</html>

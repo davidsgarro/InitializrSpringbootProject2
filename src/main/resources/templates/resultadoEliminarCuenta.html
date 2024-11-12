@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado de Eliminación de Cuenta</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            padding: 20px;
+            text-align: center;
+        }
+        .header {
+            background-color: #a60202;
+            color: white;
+            padding: 10px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .message {
+            padding: 15px;
+            font-size: 16px;
+            color: #333;
+        }
+        .btn {
+            background-color: #a60202;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background-color: #d90404;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Resultado de Eliminación de Cuenta</div>
+        <div class="message">
+            <p th:text="${mensaje}"></p>
+            <a href="/gestionCuentas" class="btn">Volver a gestión de cuentas</a>
+        </div>
+    </div>
+</body>
+</html>

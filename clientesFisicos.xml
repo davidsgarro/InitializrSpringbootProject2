@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<clientesFisicos>
+    <clienteFisico>
+        <categoria>Fisico</categoria>
+        <codigoCliente>Cliente1</codigoCliente>
+        <correo>sanchia@estudiantec.cr</correo>
+        <nombre>Sharlin Anchia</nombre>
+        <telefono>86820880</telefono>
+        <fechaNacimiento>2005-09-23</fechaNacimiento>
+        <identificacion>305610019</identificacion>
+        <maxCuentas>4</maxCuentas>
+    </clienteFisico>
+    <clienteFisico>
+        <categoria>Fisico</categoria>
+        <codigoCliente>Cliente2</codigoCliente>
+        <correo>solisgarrodavid@gmail.com</correo>
+        <nombre>David Solís</nombre>
+        <telefono>70211380</telefono>
+        <fechaNacimiento>2001-03-06</fechaNacimiento>
+        <identificacion>118050624</identificacion>
+        <maxCuentas>6</maxCuentas>
+    </clienteFisico>
+</clientesFisicos>

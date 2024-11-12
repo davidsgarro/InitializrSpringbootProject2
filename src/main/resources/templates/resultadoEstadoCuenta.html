@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Estado de Cuenta</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            width: 450px;
+            padding: 20px;
+            text-align: center;
+        }
+        .header {
+            background-color: #b83074;
+            color: white;
+            padding: 10px;
+            font-size: 24px;
+            border-radius: 8px 8px 0 0;
+        }
+        .info-section, .transacciones-section {
+            padding: 10px 0;
+            text-align: left;
+        }
+        .info-item {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .transacciones-header {
+            background-color: #b83074;
+            color: white;
+            padding: 8px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .transacciones-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        .transacciones-table th, .transacciones-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            font-size: 14px;
+        }
+        .transacciones-table th {
+            background-color: #b83074;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+        }
+        .btn {
+            background-color: #b83074;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 15px;
+            width: 100%;
+        }
+        .btn:hover {
+            background-color: #d04a91;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Estado de Cuenta</div>
+        <div class="info-section">
+            <p class="info-item"><strong>Propietario:</strong> <span th:text="${nombrePropietario}">Nombre del Propietario</span></p>
+            <p class="info-item"><strong>Número de Cuenta:</strong> <span th:text="${numeroCuenta}">CTA#</span></p>
+            <p class="info-item"><strong>Saldo:</strong> <span th:text="${saldo}">0.00</span> colones</p>
+            <p class="info-item"><strong>Estatus:</strong> <span th:text="${estatus}">desconocida</span></p>
+        </div>
+        <div class="transacciones-section">
+            <div class="transacciones-header">--- Transacciones ---</div>
+            <table class="transacciones-table">
+                <thead>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Monto</th>
+                        <th>Fecha</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="transaccion : ${transacciones}">
+                        <td th:text="${transaccion.tipo}">---</td>
+                        <td th:text="${transaccion.monto}">0.0</td>
+                        <td th:text="${#dates.format(transaccion.fecha, 'yyyy-MM-dd HH:mm:ss')}">---</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <button onclick="location.href='/consultarEstadoCuenta'" class="btn">Nueva Consulta</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado de Consulta de Saldo con Cambio de Divisa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+        .resultado-container {
+            text-align: center;
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        .resultado-header {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            background-color: #d9534f;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .mensaje {
+            font-size: 1.1em;
+            color: #333;
+            margin-top: 20px;
+        }
+        .consulta-boton {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: white;
+            background-color: #d9534f;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .consulta-boton:hover {
+            background-color: #c9302c;
+        }
+    </style>
+</head>
+<body>
+    <div class="resultado-container">
+        <div class="resultado-header">Resultado de Consulta de Saldo con cambio de divisa</div>
+        <p class="mensaje" th:text="${mensaje}">
+            Estimado usuario: (Nombre del usuario), el saldo actual de su cuenta (Número de cuenta) es de (Monto en dólares).
+        </p>
+        <button onclick="location.href='/consultarSaldoCambioMoneda'" class="consulta-boton">Nueva Consulta</button>
+    </div>
+</body>
+</html>

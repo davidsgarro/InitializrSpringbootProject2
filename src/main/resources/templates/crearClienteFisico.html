@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Cliente Físico</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #6B1E27; /* Color de encabezado */
+            color: white;
+            padding: 20px;
+            font-size: 28px;
+        }
+        .form-container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 40px auto;
+            padding: 20px;
+            width: 80%;
+            max-width: 600px;
+            text-align: left;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .form-group input, 
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .form-group input[type="date"] {
+            padding: 8px;
+        }
+        .btn {
+            background-color: #6B1E27; /* Color del botón */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 4px;
+            width: 100%;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #8b2b38; /* Color más claro al hacer hover */
+        }
+    </style>
+</head>
+<body>
+    <header>Crear Cliente Físico</header>
+    <div class="form-container">
+        <form action="/crearClienteFisico" method="post">
+            <div class="form-group">
+                <label>Nombre Completo:</label>
+                <input type="text" name="nombreCompleto" required>
+            </div>
+            <div class="form-group">
+                <label>Categoría del Cliente:</label>
+                <select name="categoria">
+                    <option value="Fisico">Físico</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Número de Teléfono:</label>
+                <input type="tel" name="telefono" required>
+            </div>
+            <div class="form-group">
+                <label>Dirección de Correo Electrónico:</label>
+                <input type="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label>Identificación del Cliente:</label>
+                <input type="text" name="identificacion" required>
+            </div>
+            <div class="form-group">
+                <label>Cantidad Máxima de Cuentas:</label>
+                <input type="number" name="maxCuentas" required>
+            </div>
+            <div class="form-group">
+                <label>Fecha de Nacimiento:</label>
+                <input type="text" name="fechaNacimiento" placeholder="YYYY-MM-DD" required>
+            </div>
+            <button type="submit" class="btn">Crear Cliente</button>
+            <button type="button" class="btn" onclick="location.href='/gestionClientes'">Volver</button> <!-- Botón Volver con estilo igualado -->
+        </form>
+    </div>
+</body>
+</html>

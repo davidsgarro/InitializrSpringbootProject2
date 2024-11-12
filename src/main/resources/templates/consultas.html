@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Consultas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fffacd; /* Fondo amarillo pastel claro */
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #ffeb3b; /* Fondo amarillo pastel */
+            color: black;
+            padding: 20px;
+            font-size: 28px;
+        }
+        p {
+            font-size: 16px;
+            color: #333;
+            margin-top: 10px;
+        }
+        .menu {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 40px;
+        }
+        .menu button {
+            background-color: #ffdd57; /* Botones amarillo pastel más vibrante */
+            color: black;
+            font-size: 18px;
+            border: none;
+            padding: 15px 30px;
+            cursor: pointer;
+            border-radius: 8px;
+            width: 300px;
+            transition: background-color 0.3s;
+        }
+        .menu button:hover {
+            background-color: #ffca28; /* Cambio de color al pasar el ratón */
+        }
+    </style>
+</head>
+<body>
+    <header>Consultas</header>
+    <p>Seleccione una opción para consultar información</p>
+    <div class="menu">
+        <button onclick="location.href='/consultarEstadoCuenta'">Consultar Estado de Cuenta</button>
+        <button onclick="location.href='/consultarEstadoCuentaCambioMoneda'">Consultar Estado de Cuenta con Cambio de Moneda</button>
+        <button onclick="location.href='/tipoCambio'">Consultar Tipo de Cambio</button>
+        <button onclick="location.href='/consultarSaldo'">Consultar Saldo Actual</button>
+        <button onclick="location.href='/consultarSaldoCambioMoneda'">Consultar Saldo Actual con cambio de Moneda</button>
+        <button onclick="location.href='/consultarEstatusCuenta'">Consultar Estatus de la Cuenta</button>
+        <button onclick="location.href='/dashboard'">Volver al Inicio</button> <!-- Botón para volver al inicio -->
+    </div>
+</body>
+</html>
+
+

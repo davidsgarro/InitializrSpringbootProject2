@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Tipo de Cambio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+        .dashboard-container {
+            text-align: center;
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .dashboard-header {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+        .tipo-cambio-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .tipo-cambio-table th, .tipo-cambio-table td {
+            padding: 10px;
+            text-align: center;
+            font-size: 1.2em;
+        }
+        .tipo-cambio-table th {
+            background-color: #85bb65;
+            color: white;
+            font-weight: bold;
+        }
+        .boton-consulta {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: white;
+            background-color: #85bb65;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .boton-consulta:hover {
+            background-color: #74a055;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="dashboard-header">Tipo de Cambio Actual</div>
+        <table class="tipo-cambio-table">
+            <tr>
+                <th>Compra</th>
+                <th>Venta</th>
+            </tr>
+            <tr>
+                <td th:text="${compra} + ' colones'">Compra</td>
+                <td th:text="${venta} + ' colones'">Venta</td>
+            </tr>
+        </table>
+        <button onclick="location.href='/consultas'">Volver al Consultas</button>
+    </div>
+</body>
+</html>

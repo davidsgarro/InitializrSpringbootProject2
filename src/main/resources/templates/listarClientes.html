@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Clientes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            width: 500px;
+            padding: 20px;
+            text-align: center;
+        }
+        .header {
+            background-color: #023ea6;
+            color: white;
+            padding: 10px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .content {
+            padding: 15px;
+            text-align: left;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ccc;
+        }
+        th {
+            background-color: #023ea6;
+            color: white;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .btn {
+            background-color: #023ea6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background-color: #1d5cb8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Listado de Clientes</div>
+        <div class="content">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Correo Electrónico</th>
+                        <th>Teléfono</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="cliente : ${clientes}">
+                        <td th:text="${cliente.nombre}"></td>
+                        <td th:text="${cliente.correo}"></td>
+                        <td th:text="${cliente.telefono}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="button-container">
+            <a href="/gestionClientes" class="btn">Volver a gestión de clientes</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultado de Actualización de Correo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            padding: 20px;
+            text-align: center;
+        }
+        .header {
+            background-color: #2D7D66;
+            color: white;
+            padding: 10px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .content {
+            padding: 15px;
+            text-align: left;
+            font-size: 16px;
+        }
+        .btn {
+            background-color: #2D7D66;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn:hover {
+            background-color: #1f5b4c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Resultado de Actualización de Correo</div>
+        <div class="content">
+            <p th:text="'Estimado usuario: ' + ${nombreCompleto} + ', usted ha cambiado el correo electrónico ' + ${correoAnterior} + ' por el nuevo correo ' + ${nuevoCorreo} + '.'"></p>
+        </div>
+        <a href="/gestionClientes" class="btn">Volver a Gestión de Clientes</a>
+    </div>
+</body>
+</html>
